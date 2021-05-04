@@ -2694,7 +2694,6 @@ const u8 gStatStageRatios[MAX_STAT_STAGE + 1][2] =
     {40, 10}, // +6, MAX_STAT_STAGE
 };
 
-
 const u16 gLinkPlayerFacilityClasses[NUM_MALE_LINK_FACILITY_CLASSES + NUM_FEMALE_LINK_FACILITY_CLASSES] =
 {
     // Male classes
@@ -5065,6 +5064,7 @@ void PokemonToBattleMon(struct Pokemon *src, struct BattlePokemon *dst)
 
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
+		
         dst->moves[i] = GetMonData(src, MON_DATA_MOVE1 + i, NULL);
         dst->pp[i] = GetMonData(src, MON_DATA_PP1 + i, NULL);
     }
@@ -5099,6 +5099,7 @@ void PokemonToBattleMon(struct Pokemon *src, struct BattlePokemon *dst)
     GetMonData(src, MON_DATA_NICKNAME, nickname);
     StringCopy10(dst->nickname, nickname);
     GetMonData(src, MON_DATA_OT_NAME, dst->otName);
+
 
     for (i = 0; i < NUM_BATTLE_STATS; i++)
         dst->statStages[i] = 6;
